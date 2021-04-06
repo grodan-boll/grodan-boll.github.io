@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KniccKnacc</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/doz7ulb.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a class="currentPage" href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="discography.html">DISCOGRAPHY</a></li>
+                <li><a href="schedule.html">SCHEDULE</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="hero">
+        <h1>KNICC KNACC</h1>
+    </div>
+    <main class="homeMain">
+        <map name="parisienneImageMap">
+            <area target="_blank" class="parisienne" alt=""
+                href="https://open.spotify.com/album/19CM8fC8xsSBEm1CkR0sKt?si=-R_CgDv0TuqnuvMm5KMb2w"
+                coords="159,88,742,669" shape="rect">
+        </map>
+        <img class="parisienne" src="img/parisienneCover.png" alt="Parisienne Album Cover" usemap="#parisienneImageMap">
+    </main>
+
+    <script src="image-map-resizer-master/js/imageMapResizer.min.js"></script>
+    <script>
+        imageMapResize();
+    </script>
+</body>
+
+</html>
