@@ -79,7 +79,7 @@ h2 {
 p {
     color: $white;
     font: normal normal normal 24px $content-fontstack;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.2px;  
 }
 
 //Nuvarande flik-knappen samt de knappar som hålls över med musen ska vara röda
@@ -164,7 +164,7 @@ nav a:hover {
     .biography {
         grid-column: 3;
         grid-row: 1/3; //positionerar texten till höger i grid-systemet.
-        margin-left: 40px; //ger texten marginal på vänstersidan för att inte sitta ihop med texten
+        margin-left: 40px; //ger texten marginal på vänstersidan för att inte sitta ihop med bilderna
         margin-right: 40px; //minskning av bildens storlek för att få den att passa inom det röda området och inte flyta in i den högra texten.
     }
 }
@@ -250,4 +250,18 @@ nav a:hover {
         }
     }
 
+}
+
+
+.svartaTexten {
+    color: $dark-gray;
+    background-color: $red; //klass som används tillsammans med jQuery för att göra texten svart och bakgrunden röd där bakgrunden är svart.
+    
+  }
+  .vitaBakgrunden{
+      background-color: $white; //klass som används tillsammans med jQuery för att göra textbakgrunden vit när man trycker på knappen
+  }
+  figure img:hover {
+    transform: scale(1.8);
+    transition: transform 800ms; //hover-effekt på about-sidans bilder som förstorar dem när man hovrar. 
 }
