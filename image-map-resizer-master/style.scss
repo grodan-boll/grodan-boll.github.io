@@ -1,0 +1,267 @@
+//Variabler för de tre färgerna som används på hemsidan
+$white: #FFFFFF;
+$dark-gray: #1C1C1C;
+$red: #C71A1A;
+
+//Variabler för de fontstacks som används på hemsidan
+$header-fontstack: trade-gothic-next-compressed,
+Arial,
+sans-serif;
+$content-fontstack: plantin,
+serif;
+
+//Anger hemsidans standar-typsnitt
+html {
+    font-family: $content-fontstack;
+}
+
+//Hemsidans bilder ska kunna minskas om de behöver men ska inte kunna förstoras till större än originalstorleken
+img {
+    max-width: 100%;
+}
+
+//Skapar den gemensamma layouten för hemsidans 4 flikar med 3 segment:
+body {
+    margin: 0;
+    display: grid;
+    //En Nav på minst 83px, en Hero-sektion på minst 180px och sen en Main som fyller resten av skärmen
+    grid-template-rows: 83px 180px 1fr;
+    height: 100vh;
+    width: 100vw;
+}
+
+//Navigationsmenyn
+header {
+    margin: 0; //Inget tomrum runtom headern (annars vitt utrymme över headern)
+
+    nav {
+        background: $dark-gray;
+
+        ul {
+            margin: 0; //Inget tomrum runtom listan (annars vitt utrymme över headern)
+            padding: 0; //Inget tomrum inuti listan (annars skjuts menyknapparna mot höger)
+            list-style: none; //Ta bort punkter från listan
+            font: normal normal bold 24px $header-fontstack;
+            letter-spacing: 2.4px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 83px; //Detta ser till att kolumnerna fyller hela nav-ytan
+            text-align: center;
+
+            li {
+                margin: auto; //Centrera menyknapparna i nav:en vertikalt
+
+                a {
+                    color: $white;
+                    text-decoration: none; //Ta bort understrykningen av länkarna
+                    transition: all 0.4s; //Ange animationen för hover
+                }
+            }
+        }
+    }
+}
+
+//Definiera utseende på h1
+h1 {
+    color: $white;
+    font: normal normal bold 92px $header-fontstack;
+    letter-spacing: 9.2px;
+}
+
+//Definiera utseende på h2
+h2 {
+    color: $white;
+    font: normal normal bold 32px $header-fontstack;
+    letter-spacing: 3.2px;
+}
+
+//Definiera utseende på p
+p {
+    color: $white;
+    font: normal normal normal 24px $content-fontstack;
+    letter-spacing: 1.2px;  
+}
+
+//Nuvarande flik-knappen samt de knappar som hålls över med musen ska vara röda
+#redText,
+.currentPage,
+nav a:hover {
+    color: $red;
+}
+
+//Hero-rutan som är mellan nav:en och main:en
+.hero {
+    background: $dark-gray;
+    display: flex; //Använder flex för att enkelt kunna centrera h1 i rutan med justify-content och align-items
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        margin: 0; //Ingen marginal för att hero-rutan inte ska skjutas ner av att h1 gör utrymme mellan sig själv och nav:en
+    }
+}
+
+//Positionerar inehållet i main med grid
+.homeMain {
+    display: grid;
+    grid-template-columns: 2fr 3fr; //Album-cover ska ta upp 2/5 av main-ytans bredd
+    margin: 0;
+    //Använder linear gradient och rgba för att lägga en semi-transparent färg över bakgrunden för att göra den mörkare
+    background: linear-gradient(rgba(28, 28, 28, 0.7), rgba(28, 28, 28, 0.7)), url("img/guitarHero.jfif");
+    background-size: cover; //Bakgrunden skalas ner och beskärs för at täcka main:ens yta
+
+    //Album-cover
+    .parisienne {
+        grid-column: 1;
+        grid-row: 1;
+        margin-top: 10px; //Gör utrymme mellan album-cover och hero-rutan
+        margin-left: -10px; //Förskjuter album-cover mot vänster för att efterlikna XD-designen (Kan delvis gå av skärmen med flit)
+        //Album-cover görs mindre för att inte skapa en scrollbar
+        height: 90%;
+        width: 90%;
+        max-height: calc(100vh - 180px - 83px); //Räknar ut hur mycket plats bilden har i viewporten och blir inte större än så
+        object-fit: contain; //Fyll grid-kolumnen utan att beskära
+        filter: drop-shadow(5px 5px 5px $dark-gray); //Ge album-cover en skugga för att tydligare indikera att den är klickbar
+    }
+}
+
+//Positionerar inehållet i main med grid
+.aboutMain {
+    display: grid; //Positionerar inehållet i About-sidans main med grid
+    background-image: url("img/aboutBackground.svg"); //bakgrundsbilden till About-sidan
+    background-size: cover; //Bakgrunden skalas ner och beskärs för att täcka ytan av about-sidans main-yta
+    grid-template-columns: 3fr 3fr 4fr;
+    grid-template-rows: 1fr 1fr; // kolumner och rader till main-sidans grid. 
+
+    h1 {
+        line-height: 10px; //Minskning av "KniccKnacc"-rubrikens radavstånd för att minska avståndet till texten nedanför och div'en ovanför.
+    }
+
+    .textLeft {
+        grid-column: 1;
+        grid-row: 1/3; //positionerar texten till vänster i grid-systemet.
+        margin-left: 25px; //ger texten marginal på vänstersidan
+
+
+    }
+
+    .sebBridgeTop {
+        grid-column: 2;
+        grid-row: 1; //positionerar bilden uppe i mitten av gridsystemet
+        margin-top: 70px; //ger bilden marginal uppåt för att passa med den röda kurvan
+        margin-left: 190px; //ger bilden marginal åt vänster
+        width: 60%; //minskning av bildens storlek för att få den att passa inom det röda området och inte flyta in i den högra texten.
+    }
+
+    .sebBridgeBottom {
+        grid-column: 2;
+        grid-row: 2; //positionerar bilden i mitten av gridsystemet men under den andra bilden på sidan.
+        margin-left: 135px; //placerar bilden i rad med sebBridgeTop i högerkant
+        width: 70%;
+
+    }
+
+    .biography {
+        grid-column: 3;
+        grid-row: 1/3; //positionerar texten till höger i grid-systemet.
+        margin-left: 40px; //ger texten marginal på vänstersidan för att inte sitta ihop med bilderna
+        margin-right: 40px; //minskning av bildens storlek för att få den att passa inom det röda området och inte flyta in i den högra texten.
+    }
+}
+
+//Positionerar inehållet i main med grid
+.discographyMain {
+    display: grid;
+    justify-content: center;
+    align-items: center; //Positionerar griden till centrum av Mainen
+    grid-template-columns: 1fr 1fr 1fr 1fr; //Skapar 4 lika stor grids där bilderna placeras
+    background-color: #1C1C1C; //Bakgrundens färg ska vara samma som resterande delar av hemsidan
+
+    //Albumomslagen i form av PNG
+    .parisienne {
+        justify-self: center; //centrar bilden inom Griden
+        width: 380px; //Bildernas Height och Width ska vara 380px som enligt adobe XD
+    }
+
+    .records {
+        justify-self: center;
+        width: 380px;
+    }
+
+    .MamaScan {
+        justify-self: center;
+        width: 380px;
+    }
+
+    .BlackIce {
+        justify-self: center;
+        width: 380px;
+    }
+}
+
+//Positionerar inehållet i main med grid
+.scheduleMain {
+    background-color: $dark-gray;
+    display: flex; //Använder flex för att på ett enkelt sätt centrera bilderna i mainen
+    justify-content: center; //Centrera innehåll horisontellt
+
+    img {
+        max-height: calc(100vh - 180px - 83px); //Bilden ska förhålla sig till mainens höjd
+    }
+
+    table {
+        font: normal normal bold 24px Trade Gothic Next LT Pro;
+        letter-spacing: 2.4px;
+        color: $white;
+        border-collapse: collapse; //Endast en linje (slår ihopp cellernas border till en)
+        grid-column: 3/6;
+        max-width: 40vw; //För att tabellen inte ska stretchas ut till högerkant, utan ska förhållas till sidfönstret
+        align-self: center; //Centrerar sig vertikalt i mainen
+
+        tr {
+
+            th,
+            td {
+                //Skapa border
+                border: 2px dotted $red;
+                padding: 15px;
+
+            }
+
+            th {
+                //Gör headers röda och ha ingen border i överkant
+                color: $red;
+                border-top: none;
+            }
+
+            //Targetar alla celler på vänster sida mittlinjen
+            :first-child {
+                //Tar bort border i vänsterkant och högerställer cellinnehållet
+                text-align: right;
+                border-left: none;
+            }
+
+            //Targetar alla celler på höger sida mittlinjen
+            :nth-child(2) {
+                //Tar bort border i högerkant och vänsterställer cellinnehållet
+                text-align: left;
+                border-right: none;
+            }
+        }
+    }
+
+}
+
+
+.svartaTexten {
+    color: $dark-gray;
+    background-color: $red; //klass som används tillsammans med jQuery för att göra texten svart och bakgrunden röd där bakgrunden är svart.
+    
+  }
+  .vitaBakgrunden{
+      background-color: $white; //klass som används tillsammans med jQuery för att göra textbakgrunden vit när man trycker på knappen
+  }
+  figure img:hover {
+    transform: scale(1.8);
+    transition: transform 800ms; //hover-effekt på about-sidans bilder som förstorar dem när man hovrar. 
+}

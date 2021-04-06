@@ -1,0 +1,278 @@
+html {
+  font-family: plantin, serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 83px 180px 1fr;
+      grid-template-rows: 83px 180px 1fr;
+  height: 100vh;
+  width: 100vw;
+}
+
+header {
+  margin: 0;
+}
+
+header nav {
+  background: #1C1C1C;
+}
+
+header nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font: normal normal bold 24px trade-gothic-next-compressed, Arial, sans-serif;
+  letter-spacing: 2.4px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 83px;
+      grid-template-rows: 83px;
+  text-align: center;
+}
+
+header nav ul li {
+  margin: auto;
+}
+
+header nav ul li a {
+  color: #FFFFFF;
+  text-decoration: none;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+h1 {
+  color: #FFFFFF;
+  font: normal normal bold 92px trade-gothic-next-compressed, Arial, sans-serif;
+  letter-spacing: 9.2px;
+}
+
+h2 {
+  color: #FFFFFF;
+  font: normal normal bold 32px trade-gothic-next-compressed, Arial, sans-serif;
+  letter-spacing: 3.2px;
+}
+
+p {
+  color: #FFFFFF;
+  font: normal normal normal 24px plantin, serif;
+  letter-spacing: 1.2px;
+}
+
+#redText,
+.currentPage,
+nav a:hover {
+  color: #C71A1A;
+}
+
+.hero {
+  background: #1C1C1C;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero h1 {
+  margin: 0;
+}
+
+.homeMain {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 3fr;
+      grid-template-columns: 2fr 3fr;
+  margin: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(28, 28, 28, 0.7)), to(rgba(28, 28, 28, 0.7))), url("img/guitarHero.jfif");
+  background: linear-gradient(rgba(28, 28, 28, 0.7), rgba(28, 28, 28, 0.7)), url("img/guitarHero.jfif");
+  background-size: cover;
+}
+
+.homeMain .parisienne {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  margin-top: 10px;
+  margin-left: -10px;
+  height: 90%;
+  width: 90%;
+  max-height: calc(100vh - 180px - 83px);
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-filter: drop-shadow(5px 5px 5px #1C1C1C);
+          filter: drop-shadow(5px 5px 5px #1C1C1C);
+}
+
+.aboutMain {
+  display: -ms-grid;
+  display: grid;
+  background-image: url("img/aboutBackground.svg");
+  background-size: cover;
+  -ms-grid-columns: 3fr 3fr 4fr;
+      grid-template-columns: 3fr 3fr 4fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+}
+
+.aboutMain h1 {
+  line-height: 10px;
+}
+
+.aboutMain .textLeft {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1/3;
+  margin-left: 25px;
+}
+
+.aboutMain .sebBridgeTop {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  margin-top: 70px;
+  margin-left: 190px;
+  width: 60%;
+}
+
+.aboutMain .sebBridgeBottom {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  margin-left: 135px;
+  width: 70%;
+}
+
+.aboutMain .biography {
+  -ms-grid-column: 3;
+  grid-column: 3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1/3;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.discographyMain {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: #1C1C1C;
+}
+
+.discographyMain .parisienne {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 380px;
+}
+
+.discographyMain .records {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 380px;
+}
+
+.discographyMain .MamaScan {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 380px;
+}
+
+.discographyMain .BlackIce {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 380px;
+}
+
+.scheduleMain {
+  background-color: #1C1C1C;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.scheduleMain img {
+  max-height: calc(100vh - 180px - 83px);
+}
+
+.scheduleMain table {
+  font: normal normal bold 24px Trade Gothic Next LT Pro;
+  letter-spacing: 2.4px;
+  color: #FFFFFF;
+  border-collapse: collapse;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
+  grid-column: 3/6;
+  max-width: 40vw;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.scheduleMain table tr th,
+.scheduleMain table tr td {
+  border: 2px dotted #C71A1A;
+  padding: 15px;
+}
+
+.scheduleMain table tr th {
+  color: #C71A1A;
+  border-top: none;
+}
+
+.scheduleMain table tr :first-child {
+  text-align: right;
+  border-left: none;
+}
+
+.scheduleMain table tr :nth-child(2) {
+  text-align: left;
+  border-right: none;
+}
+
+.svartaTexten {
+  color: #1C1C1C;
+  background-color: #C71A1A;
+}
+
+.vitaBakgrunden {
+  background-color: #FFFFFF;
+}
+
+figure img:hover {
+  -webkit-transform: scale(1.8);
+          transform: scale(1.8);
+  -webkit-transition: -webkit-transform 800ms;
+  transition: -webkit-transform 800ms;
+  transition: transform 800ms;
+  transition: transform 800ms, -webkit-transform 800ms;
+}
+/*# sourceMappingURL=style.css.map */
